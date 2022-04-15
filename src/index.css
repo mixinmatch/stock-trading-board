@@ -1,0 +1,179 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.header-bar {
+  box-shadow: 0 3px 5px rgb(209, 203, 203);
+  height: 60px;
+  margin: 10px 0 10px 0; 
+  display: flex;
+  justify-content: space-between;
+  padding-left: 8rem;
+  padding-right: 3rem;
+}
+
+.header-bar-search {
+  outline: none;
+  align-self: center;
+  border-color: #d3d3d366;
+  border-radius: 5px;
+
+
+  -webkit-appearance: none; 
+  -moz-appearance: none; 
+  border: 2px solid #eee;
+}
+
+.right-button-group {
+  
+}
+
+.right-menu-button {
+  background: white;
+  color: rgba(0, 0, 0, 0.801);
+  border: none;
+  height: 100%;
+  transition: background 0.3s ease-in-out;
+}
+
+.right-menu-button:hover {
+  background-color: rgba(235, 235, 235, 0.925);
+}
+
+.button-fmt {
+  font-weight: bolder;
+
+}
+
+.company-name {
+  font-size: calc(1.375rem + 1.5vw);
+  font-weight: bold;
+}
+
+.stock-price {
+  /* font-size: calc(1.375rem + 1.5vw); */
+  font-size: calc(1.375rem + 1.5vw);
+  font-weight: bold;
+}
+
+.ticker {
+  display: inline-block;
+  font-size: calc(1.375rem);
+  font-weight: bold;
+}
+
+.dashboard-group {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  gap: 26%;
+  padding-top: 45px;
+}
+
+.watchlist-wrapper {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+
+/* .btn {
+  display: inline-block;
+  background: rgb(75, 190, 248);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px; 
+  font-family: inherit;
+
+  transition: background 0.5s ease-in-out;
+}
+
+.btn:hover {
+  background: rgb(95, 3, 0);
+}
+
+.btn:active {
+  opacity: 40%;
+} */
+
+.graph-period {
+  display: flex;
+}
+
+
+
+.increase-arrow {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 12px solid #188038;
+  display: inline-block;
+}
+
+.price-increase {
+  color: #188038;
+}
+
+.watchlist-header {
+  display: flex;
+  justify-content: space-between;
+
+  border-bottom: solid #eeeeee 0.2rem;
+}
+
+.watchList-header-dot-button {
+  border: none;
+  background-color: transparent;
+  transition: background 0.4s ease-in-out;
+}
+
+.watchList-header-dot-button:hover {
+  background-color: #eeeeee;
+}
+
+
+
+.watchlist {
+  border-radius: 5px;
+  border-color: rgba(59, 59, 59, 0.89);
+  width: 25rem;
+  padding: 1rem;
+
+
+
+}
+
+.watchlist-card {
+  border-width: 1px;
+  padding-top: 1%;
+  height: 60px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.symbol-font {
+  font-weight: bolder;
+  font-size: 1.2vw;
+}
+
+.card-price {
+  font-size: 1.6vw;
+}
+
