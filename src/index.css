@@ -76,8 +76,7 @@ code {
 .dashboard-group {
   display: flex;
   width: 100%;
-  justify-content: space-evenly;
-  gap: 26%;
+  justify-content: space-around;
   padding-top: 45px;
 }
 
@@ -121,12 +120,12 @@ code {
   height: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-bottom: 12px solid #188038;
+  border-bottom: 12px solid #66ddb8;
   display: inline-block;
 }
 
 .price-increase {
-  color: #188038;
+  color: #66ddb8;
 }
 
 .watchlist-header {
@@ -177,3 +176,51 @@ code {
   font-size: 1.6vw;
 }
 
+.cumulative-returns-buttons {
+  border: none;
+  outline: none;
+  background-color: transparent;
+
+  border-bottom: #66ddb8;
+}
+
+/* #f9b6a7 */
+
+.news-card {
+
+}
+
+.crb {
+  text-decoration: none;
+  color: black;
+}
+
+.button-container ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-start;
+
+  margin: 0;
+  padding: 0;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.tab {
+  padding: 10px;
+}
+
+.tabactive::after {
+  background-color: #66ddb8;
+  border-radius: 4px 4px 0 0;
+  content: "";
+  display: block;
+  margin-top: 10px;
+  height: 4px;
+}
+.tabactive > a {
+  color: #66ddb8;
+}
