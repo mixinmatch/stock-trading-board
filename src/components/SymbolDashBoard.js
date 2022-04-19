@@ -2,6 +2,7 @@ import Reacts from "react";
 import { useState } from 'react'
 import WatchList from './WatchList'
 import StockGraph from './StockGraph'
+import NewsCard  from './NewsCard'
 
 const SymbolDashBoard = () => {
 
@@ -26,6 +27,8 @@ const Ticker = ({companyName, tickerSymbol, volume, price, changeAmount, changeD
             }> </div> <span className={changeDirection === 'UP' ? 'price-increase' : changeDirection === 'DOWN' ? 'price-increase' : ''}>{'$' + changeAmount} ({(price/(price-changeAmount)).toFixed(2) +'%'}) </span> <span style={{fontWeight: "normal"}}>Today</span></p>
             <StockGraph />
             <CumulativeReturnButtons />
+            <NewsCard />
+            <NewsCard />
         </div>
     )
 }

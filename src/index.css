@@ -184,11 +184,7 @@ code {
   border-bottom: #66ddb8;
 }
 
-/* #f9b6a7 */
-
-.news-card {
-
-}
+/* #f9b6a7 red */
 
 .crb {
   text-decoration: none;
@@ -223,4 +219,44 @@ code {
 }
 .tabactive > a {
   color: #66ddb8;
+}
+
+.news-card {
+  border-radius: 4px 4px 0 0;
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  display: flex;
+}
+
+.news-card:hover {
+  background-color: #fafafa;
+}
+
+.news-card-photo {
+  display: inline-block;
+  width:100px;
+}
+
+.img-news {
+  border-radius: 4px;
+  height: 100%;
+}
+.text-news {
+  padding: 0 10px 10px 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+
+.news-header {
+  font-weight: bold;
+  display: block;
+  font-size: 1.1rem;
+}
+
+.news-company {
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding-bottom: 15px;
 }
