@@ -147,11 +147,11 @@ code {
 
 .symbol-font {
   font-weight: bolder;
-  font-size: 1.2vw;
+  font-size: 1.2rem;
 }
 
 .card-price {
-  font-size: 1.6vw;
+  font-size: 1.2rem;
 }
 
 .cumulative-returns-buttons {
