@@ -21,10 +21,12 @@ const Ticker = ({companyName, tickerSymbol, volume, price, changeAmount, changeD
     return (
         <div>
             {/* <div className="company-name">{companyName}</div> */}
+            <div>
             <div className="stock-price">${price}</div>
             <p className="ticker"><div className={
                 changeDirection === 'UP' ? 'increase-arrow' : changeDirection === 'DOWN' ? 'decrease-arrow' : 'NOCHANGE'  
             }> </div> <span className={changeDirection === 'UP' ? 'price-increase' : changeDirection === 'DOWN' ? 'price-increase' : ''}>{'$' + changeAmount} ({(price/(price-changeAmount)).toFixed(2) +'%'}) </span> <span style={{fontWeight: "normal"}}>Today</span></p>
+            </div>
             <StockGraph />
             <CumulativeReturnButtons />
             <NewsCard />

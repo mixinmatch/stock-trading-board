@@ -2,9 +2,11 @@ import Button from "./Button"
 
 const HeaderBar = () => {
     return (
-        <div className="header-bar">
-            <input className="header-bar-search" type="text" placeholder="Search a stock"/>
-            <RightMenu />
+        <div>
+            <div className="header-bar">
+                <input className="header-bar-search" type="text" placeholder="Search a stock" />
+                <RightMenu />
+            </div>
         </div>
     )
 }
