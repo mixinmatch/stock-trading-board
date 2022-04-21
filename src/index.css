@@ -238,3 +238,57 @@ code {
   font-weight: bold;
   padding-bottom: 15px;
 }
+
+/* toggle css */
+
+input[type=checkbox]{
+	visibility: hidden;
+}
+
+.round-toggle {
+  border-radius: 100px;
+  cursor: pointer;
+  background-color: #66ddb8;
+  width: 75px;
+  height: 33px;
+
+  /* position */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+  /* the toggle ball */
+.round-toggle:after {
+  content: "";
+  height: 26px;
+  width: 26px;
+  border-radius: 100px;
+  background-color: white;
+
+  /* its positioning  */
+  position: absolute;
+  left: 6px;
+  top: 3px;
+
+  transition: .4s;
+}
+
+input:checked + .round-toggle {
+  background-color: #000000d0;
+}
+
+input:checked + .round-toggle:after
+ {
+  transform: translate(37px);
+  background-color: white;
+}
+
+.text-toggle {
+    /* its positioning  */
+    position: absolute;
+    left: 95px;
+    top: 3px;
+}
