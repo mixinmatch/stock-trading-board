@@ -254,10 +254,6 @@ input[type=checkbox]{
 
   /* position */
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
 }
 
   /* the toggle ball */
@@ -270,9 +266,8 @@ input[type=checkbox]{
 
   /* its positioning  */
   position: absolute;
-  left: 6px;
   top: 3px;
-
+  left: 6px;
   transition: .4s;
 }
 
@@ -290,15 +285,17 @@ input:checked + .round-toggle:after
     /* its positioning  */
     position: absolute;
     left: 95px;
-    top: 3px;
     white-space: nowrap;
 }
 
-/* TODO: refactor the other div with margin auto */
-.center-content-box {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1500px;
+.center-toggle-box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin-top: 100px;
+  left: 25%;
+}
 
-
+.separate-toggle-box {
+  height: 64px;
 }

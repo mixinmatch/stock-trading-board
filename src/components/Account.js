@@ -2,9 +2,9 @@ import ToggleSwitch from "./ToggleSwitch";
 
 const Account = () => {
     return (
-        <div>
-            <ToggleSwitch text={"Enable option trading"} />
-            <ToggleSwitch text={"Enable trading password"} />
+        <div className="center-toggle-box" >
+            <ToggleSwitch text={"Enable option trading"} switchTargets={["optionTrading"]} />
+            <ToggleSwitch text={"Enable trading password"} switchTargets={["tradingPassword"]}/>
         </div>
     )
 }

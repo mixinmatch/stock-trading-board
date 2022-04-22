@@ -1,10 +1,13 @@
-const ToggleSwitch = ({text}) => {
+const ToggleSwitch = ({text, switchTargets=["default-togg"]}) => {
     return (
-        <>
-            <input type="checkbox" id="togg" />
-            <label className="round-toggle" htmlFor="togg"> </label>
-            <span className="text-toggle"> {text}</span>
-        </>
+        switchTargets.map((switchTarget) => (
+            <div className="separate-toggle-box">
+                <input type="checkbox" id={switchTarget} />
+                <label className="round-toggle" htmlFor={switchTarget}> </label>
+                <span className="text-toggle"> {text} </span>
+            </div>
+        ))
+
     )
 }
 
