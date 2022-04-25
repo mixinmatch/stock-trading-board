@@ -129,6 +129,7 @@ code {
   border-radius: 5px;
   border-color: rgba(59, 59, 59, 0.89);
   width: 25rem;
+  min-width: 25rem;
   padding: 1rem;
 
 
@@ -248,7 +249,7 @@ input[type=checkbox]{
 .round-toggle {
   border-radius: 100px;
   cursor: pointer;
-  background-color: #66ddb8;
+  background-color: #000000d0;
   width: 75px;
   height: 33px;
 
@@ -272,7 +273,7 @@ input[type=checkbox]{
 }
 
 input:checked + .round-toggle {
-  background-color: #000000d0;
+  background-color: #66ddb8;
 }
 
 input:checked + .round-toggle:after
@@ -298,4 +299,31 @@ input:checked + .round-toggle:after
 
 .separate-toggle-box {
   height: 64px;
+}
+
+.search-result-card {
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  /* width: 52%; */
+  border-radius: 4px;
+  /* border-width: 2.2px; */
+  align-items: center;
+  /* max-width: 15%; */
+  background-color: #ffffff;
+}
+
+.search-result-card:hover {
+  background-color: rgba(211, 211, 211, 1) ;
+  cursor: pointer;
+}
+
+.search-results {
+  position: fixed;
+  position: fixed;
+  left: 8%;
+  width: 17%;
+  /* margin-left: auto;
+  margin-right: auto;
+  max-width: 1500px; */
 }

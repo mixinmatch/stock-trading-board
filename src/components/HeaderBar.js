@@ -6,12 +6,25 @@ import {
     Routes,
     Route
   } from "react-router-dom";
+import { useState } from "react";
+import stockData from './Data'
+import SearchResult from "./SeachResult";
 const HeaderBar = () => {
+
+    const [text, setText] = useState("")
+    function onSearchChange(event) {
+        setText(event.target.value)
+    }
     return (
         <div>
             <div className="header-bar">
-                <input className="header-bar-search" type="text" placeholder="Search a stock" />
+                <input className="header-bar-search" type="text" placeholder="Search a stock" onInput={onSearchChange} />
                 <RightMenu />
+            </div>
+            <div>
+            {
+               text && <SearchResults query={text} />
+            }
             </div>
         </div>
     )
@@ -19,10 +32,17 @@ const HeaderBar = () => {
 
 //expanding searchbar form an icon on click
 //add shadow down
-
-const SearchBar = () => {
-
-
+const SearchResults = ({query}) => {
+    const data = stockData;
+    return (
+        <div className="search-results">
+            {
+                data.map((data) => (
+                    <SearchResult symbol={data.symbol} price={data.price} />
+                ))
+            }
+        </div>
+    )
 }
 
 const RightMenu = () => {
