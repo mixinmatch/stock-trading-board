@@ -17,7 +17,7 @@ const WatchList = ({ watches }) => {
 
 const CardList = ({array}) => {
     return (
-        array.map((el) => <WatchCard w={el} />)
+        array.map((el) => <WatchCard key={el.symbol} w={el} />)
     )
 }
 
