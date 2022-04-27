@@ -1,4 +1,5 @@
 import Button from "./Button"
+import React from "react";
 import {
     BrowserRouter as Router,
     Link,
@@ -9,12 +10,13 @@ import {
 import { useState } from "react";
 import stockData from './Data'
 import SearchResult from "./SeachResult";
-const HeaderBar = ({handler}) => {
+const HeaderBar = ({handler, renderSearch, setRenderSearch}) => {
 
     const [text, setText] = useState("")
     
     function onSearchChange(event) {
         setText(event.target.value)
+        setRenderSearch(true)
     }
     return (
         <div>
@@ -22,9 +24,9 @@ const HeaderBar = ({handler}) => {
                 <input className="header-bar-search" type="text" placeholder="Search a stock" onInput={onSearchChange} />
                 <RightMenu />
             </div>
-            <div>
+            <div id="searches">
             {
-               text &&  <SearchResults query={text} handl={handler}/>
+               renderSearch && text && <SearchResults query={text} handl={handler}/>
             }
             </div>
         </div>
@@ -33,17 +35,28 @@ const HeaderBar = ({handler}) => {
 
 //expanding searchbar form an icon on click
 //add shadow down
-const SearchResults = ({query, handl}) => {
-    const data = stockData;
-    return (
-        <div className="search-results" >
-            {
-                data.map((data) => (
-                    <SearchResult symbol={data.symbol} price={data.price} handl={handl}/>
-                ))
-            }
-        </div>
-    )
+class SearchResults extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.data = stockData
+    }
+
+    componentWillUnmount() {
+        console.log("unmounted!")
+    }
+
+    render() {
+        return (
+            <div className="search-results" >
+                {
+                    this.data.map((data) => (
+                        <SearchResult key={data.symbol} symbol={data.symbol} price={data.price} handl={this.props.handl}/>
+                    ))
+                }
+            </div>
+        )
+    }
 }
 
 const RightMenu = () => {

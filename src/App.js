@@ -10,11 +10,15 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+
+import ReactDOM from 'react-dom'
+
 import { useState } from 'react';
 import {stockDataApple, stockDataMeta, stockDataNvidia} from './components/Data'
 
 function App() {
   const [dataGraph, setDataGraph] = useState(stockDataApple)
+  const [renderSearch, setRenderSearch] = useState(true)
 
   function handl(event) {
     let symbol = event.target.firstChild.innerText;
@@ -26,11 +30,12 @@ function App() {
     } else if(symbol ==='NVDA') {
       setDataGraph(stockDataNvidia)
     }
+    setRenderSearch(false);
   }
 
   return (
     <>
-    <HeaderBar handler={handl}/>
+    <HeaderBar handler={handl} renderSearch={renderSearch} setRenderSearch={setRenderSearch}/>
         <Routes>
           <Route path="/dashboard" element={<SymbolDashBoard d={dataGraph}/>} />
           <Route path="/notifications" element={<Notifications />} />
