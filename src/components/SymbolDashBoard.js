@@ -4,20 +4,19 @@ import WatchList from './WatchList'
 import StockGraph from './StockGraph'
 import NewsCard  from './NewsCard'
 
-const SymbolDashBoard = () => {
+const SymbolDashBoard = ({d}) => {
 
     const stocksWatches = [{ symbol: 'AAPL', price: 166.79 }, { symbol: 'MSFT', price: 282.69 }, { symbol: 'GOOGL', price: 2553.01}, { symbol: 'AMZN', price: 3054.41 }, { symbol: 'TSLA', price: 992.46}, { symbol: 'NVDA', price: 216.37}, { symbol: 'BRK.A', price: 518652.88 }, { symbol: 'FB', price: 212.79 }, { symbol: 'UNH', price: 539.65}, { symbol: 'JNJ', price: 180.92}]
 
-
     return (
         <div className="dashboard-group">
-            <Ticker isAddedToWatchList={false} companyName='Apple inc' price={171.83} changeAmount={3.23} changeDirection='UP'/>
+            <Ticker isAddedToWatchList={false} companyName='Apple inc' price={171.83} changeAmount={3.23} changeDirection='UP' data={d}/>
             <WatchList watches={stocksWatches}/>
         </div>   
     )
 }
 
-const Ticker = ({companyName, tickerSymbol, volume, price, changeAmount, changeDirection}) => {
+const Ticker = ({companyName, tickerSymbol, volume, price, changeAmount, changeDirection, data}) => {
     return (
         <div>
             {/* <div className="company-name">{companyName}</div> */}
@@ -27,7 +26,7 @@ const Ticker = ({companyName, tickerSymbol, volume, price, changeAmount, changeD
                 changeDirection === 'UP' ? 'increase-arrow' : changeDirection === 'DOWN' ? 'decrease-arrow' : 'NOCHANGE'  
             }> </div> <span className={changeDirection === 'UP' ? 'price-increase' : changeDirection === 'DOWN' ? 'price-increase' : ''}>{'$' + changeAmount} ({(price/(price-changeAmount)).toFixed(2) +'%'}) </span> <span style={{fontWeight: "normal"}}>Today</span></p>
             </div>
-            <StockGraph />
+            <StockGraph data1={data}/>
             <CumulativeReturnButtons />
             <NewsCard />
             <NewsCard />

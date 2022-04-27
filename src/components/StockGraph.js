@@ -48,9 +48,9 @@ const data = [
       },
   ];
 
-const StockGraph = () => {
+const StockGraph = ({data1=data}) => {
     return (
-        <LineChart width={900} height={300} data={data} >
+        <LineChart width={900} height={300} data={data1} >
             <Line type="linear" dataKey="uv" stroke="#66ddb8" dot={false} />
             <ReferenceLine y={2390} stroke="gray" strokeDasharray="3 3" />
             <Tooltip />

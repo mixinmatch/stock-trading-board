@@ -9,9 +9,10 @@ import {
 import { useState } from "react";
 import stockData from './Data'
 import SearchResult from "./SeachResult";
-const HeaderBar = () => {
+const HeaderBar = ({handler}) => {
 
     const [text, setText] = useState("")
+    
     function onSearchChange(event) {
         setText(event.target.value)
     }
@@ -23,7 +24,7 @@ const HeaderBar = () => {
             </div>
             <div>
             {
-               text && <SearchResults query={text} />
+               text &&  <SearchResults query={text} handl={handler}/>
             }
             </div>
         </div>
@@ -32,13 +33,13 @@ const HeaderBar = () => {
 
 //expanding searchbar form an icon on click
 //add shadow down
-const SearchResults = ({query}) => {
+const SearchResults = ({query, handl}) => {
     const data = stockData;
     return (
-        <div className="search-results">
+        <div className="search-results" >
             {
                 data.map((data) => (
-                    <SearchResult symbol={data.symbol} price={data.price} />
+                    <SearchResult symbol={data.symbol} price={data.price} handl={handl}/>
                 ))
             }
         </div>
