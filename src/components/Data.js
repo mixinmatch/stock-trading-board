@@ -12,8 +12,17 @@ const stockData = [
   // { symbol: 'JNJ', price: 180.92}
 ]
 
+
+class StockTicker {
+  constructor(price, upDownAmount, graphData) {
+    this.price = price
+    this.upDownAmount = upDownAmount
+    this.graphData = graphData
+  }
+}
+
 // graph data for each stock...
-export const stockDataApple = [
+export const stockDataApple = new StockTicker(156.57, 0.23, [
     {
       name: 'Page A',
       uv: 4000,
@@ -48,9 +57,9 @@ export const stockDataApple = [
         uv: 3490,
         amt: 2100,
       },
-  ];
+  ]);
 
-export const stockDataMeta = [
+export const stockDataMeta = new StockTicker(174.95, 6.00, [
     {
       name: 'Page A',
       uv: 4000,
@@ -80,9 +89,9 @@ export const stockDataMeta = [
       uv: 2390,
       amt: 2500,
     }
-  ];
+  ]);
 
-export const stockDataNvidia = [
+export const stockDataNvidia = new StockTicker(184.15, 3.73, [
     {
       name: 'Page A',
       uv: 4000,
@@ -127,7 +136,7 @@ export const stockDataNvidia = [
         uv: 3490,
         amt: 2100,
       },
-  ];
+  ]);
 
 
 export default stockData

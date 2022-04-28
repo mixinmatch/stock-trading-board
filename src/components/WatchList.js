@@ -6,7 +6,7 @@ const WatchList = ({ watches }) => {
         <div className="watchlist" style={{boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"}}>
             <header className="watchlist-header">
                 <h4>Watchlist</h4> 
-                <button className="watchList-header-dot-button">
+                <button className="watchList-header-dot-button" disabled>
                     <BsThreeDots size={25}/>
                 </button>
             </header>

@@ -4,13 +4,13 @@ import WatchList from './WatchList'
 import StockGraph from './StockGraph'
 import NewsCard  from './NewsCard'
 
-const SymbolDashBoard = ({d}) => {
+const SymbolDashBoard = ({d, price=171.83}) => {
 
     const stocksWatches = [{ symbol: 'AAPL', price: 166.79 }, { symbol: 'MSFT', price: 282.69 }, { symbol: 'GOOGL', price: 2553.01}, { symbol: 'AMZN', price: 3054.41 }, { symbol: 'TSLA', price: 992.46}, { symbol: 'NVDA', price: 216.37}, { symbol: 'BRK.A', price: 518652.88 }, { symbol: 'FB', price: 212.79 }, { symbol: 'UNH', price: 539.65}, { symbol: 'JNJ', price: 180.92}]
 
     return (
         <div className="dashboard-group">
-            <Ticker isAddedToWatchList={false} companyName='Apple inc' price={171.83} changeAmount={3.23} changeDirection='UP' data={d}/>
+            <Ticker isAddedToWatchList={false} companyName='Apple inc' price={price} changeAmount={3.23} changeDirection='UP' data={d}/>
             <WatchList watches={stocksWatches}/>
         </div>   
     )
