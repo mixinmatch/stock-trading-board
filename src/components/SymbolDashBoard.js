@@ -3,20 +3,23 @@ import { useState } from 'react'
 import WatchList from './WatchList'
 import StockGraph from './StockGraph'
 import NewsCard  from './NewsCard'
+import stockDataApple from './Data'
 
-const SymbolDashBoard = ({d, price=171.83}) => {
+const SymbolDashBoard = ({d, price=stockDataApple.price, changeAmount=stockDataApple.upDownAmount}) => {
 
     const stocksWatches = [{ symbol: 'AAPL', price: 166.79 }, { symbol: 'MSFT', price: 282.69 }, { symbol: 'GOOGL', price: 2553.01}, { symbol: 'AMZN', price: 3054.41 }, { symbol: 'TSLA', price: 992.46}, { symbol: 'NVDA', price: 216.37}, { symbol: 'BRK.A', price: 518652.88 }, { symbol: 'FB', price: 212.79 }, { symbol: 'UNH', price: 539.65}, { symbol: 'JNJ', price: 180.92}]
 
     return (
         <div className="dashboard-group">
-            <Ticker isAddedToWatchList={false} companyName='Apple inc' price={price} changeAmount={3.23} changeDirection='UP' data={d}/>
+            <Ticker isAddedToWatchList={false} companyName='Apple inc' price={price} changeAmount={changeAmount} data={d}/>
             <WatchList watches={stocksWatches}/>
         </div>   
     )
 }
 
-const Ticker = ({companyName, tickerSymbol, volume, price, changeAmount, changeDirection, data}) => {
+const Ticker = ({companyName, tickerSymbol, volume, price, changeAmount, data}) => {
+    let changeDirection = changeAmount > 0 ? 'UP' : changeAmount < 0 ? 'DOWN' : 'NOCHANGE'
+
     return (
         <div>
             {/* <div className="company-name">{companyName}</div> */}
@@ -24,7 +27,7 @@ const Ticker = ({companyName, tickerSymbol, volume, price, changeAmount, changeD
             <div className="stock-price">${price}</div>
             <p className="ticker"><div className={
                 changeDirection === 'UP' ? 'increase-arrow' : changeDirection === 'DOWN' ? 'decrease-arrow' : 'NOCHANGE'  
-            }> </div> <span className={changeDirection === 'UP' ? 'price-increase' : changeDirection === 'DOWN' ? 'price-increase' : ''}>{'$' + changeAmount} ({(price/(price-changeAmount)).toFixed(2) +'%'}) </span> <span style={{fontWeight: "normal"}}>Today</span></p>
+            }> </div> <span className={changeDirection === 'UP' ? 'price-increase' : changeDirection === 'DOWN' ? 'price-decrease' : ''}>{'$' + changeAmount} ({(changeAmount/price).toFixed(3) +'%'}) </span> <span style={{fontWeight: "normal"}}>Today</span></p>
             </div>
             <StockGraph data1={data}/>
             <CumulativeReturnButtons />

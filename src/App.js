@@ -20,20 +20,26 @@ function App() {
   const [dataGraph, setDataGraph] = useState(stockDataApple.graphData)
   const [renderSearch, setRenderSearch] = useState(true)
   const [price, setPrice] = useState(stockDataApple.price)
+  const [changeAmount, setChangeAmount] = useState(stockDataApple.upDownAmount)
+
 
 
   function handl(event) {
     let symbol = event.target.firstChild.innerText;
 
+
     if(symbol ==='AAPL') {
       setDataGraph(stockDataApple.graphData)
       setPrice(stockDataApple.price)
+      setChangeAmount(stockDataApple.upDownAmount)
     } else if(symbol ==='FB') {
       setDataGraph(stockDataMeta.graphData)
       setPrice(stockDataMeta.price)
+      setChangeAmount(stockDataMeta.upDownAmount)
     } else if(symbol ==='NVDA') {
       setDataGraph(stockDataNvidia.graphData)
       setPrice(stockDataNvidia.price)
+      setChangeAmount(stockDataNvidia.upDownAmount)
     }
     setRenderSearch(false);
   }
@@ -42,7 +48,7 @@ function App() {
     <>
     <HeaderBar handler={handl} renderSearch={renderSearch} setRenderSearch={setRenderSearch}/>
         <Routes>
-          <Route path="/dashboard" element={<SymbolDashBoard d={dataGraph} price={price}/>} />
+          <Route path="/dashboard" element={<SymbolDashBoard d={dataGraph} price={price} changeAmount={changeAmount}/>} />
           <Route path="/notifications" element={<Notifications />} />
           <Route path="/account" element={<Account />} />
         </Routes>

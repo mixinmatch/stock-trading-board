@@ -42,10 +42,6 @@ class SearchResults extends React.Component {
         this.data = stockData
     }
 
-    componentWillUnmount() {
-        console.log("unmounted!")
-    }
-
     render() {
         return (
             <div className="search-results" >
