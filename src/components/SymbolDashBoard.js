@@ -31,8 +31,8 @@ const Ticker = ({companyName, tickerSymbol, volume, price, changeAmount, data}) 
             </div>
             <StockGraph data1={data}/>
             <CumulativeReturnButtons />
-            <NewsCard />
-            <NewsCard />
+            <NewsCard imgSrc={"img/newspaper.jpg"}/>
+            <NewsCard imgSrc={"img/skyscraper.jpg"}/>
         </div>
     )
 }

@@ -1,7 +1,7 @@
-const NewsCard = () => {
+const NewsCard = ({imgSrc}) => {
     return (
         <div className="news-card">
-            <img src="img/index2.svg" className="img-news" />
+            <img src={imgSrc} className="img-news" />
             <span className="text-news">
             <span className="news-company">Market watch on <span className="price-increase">AAAA (+3.45%)</span></span>
                 <span className="news-header">
