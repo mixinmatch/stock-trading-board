@@ -21,7 +21,10 @@ const HeaderBar = ({handler, renderSearch, setRenderSearch}) => {
     return (
         <div>
             <div className="header-bar">
+                <div className="logo-and-search">
+                <img src={"img/logo.png"} />
                 <input className="header-bar-search" type="text" placeholder="Search a stock" onInput={onSearchChange} />
+                </div>
                 <RightMenu />
             </div>
             <div id="searches">
