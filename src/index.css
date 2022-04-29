@@ -345,3 +345,12 @@ input:checked + .round-toggle:after
   margin-right: auto;
   max-width: 1500px; */
 }
+
+.news-text{
+  /* todo other browser */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
