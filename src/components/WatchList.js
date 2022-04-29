@@ -1,7 +1,6 @@
 import { BsThreeDots } from 'react-icons/bs'
 import { MiniStockGraph } from './MiniGraph'
-import { stockDataApple } from './Data'
-import generateGraphData from '../util/Utils'
+import { stockDataApple, miniGraphBySymbol } from './Data'
 const WatchList = ({ watches }) => {
     
     return (
@@ -26,7 +25,7 @@ const CardList = ({array}) => {
 
 
 const WatchCard = ({ w }) => {
-    let d = generateGraphData(w.price)
+    let d = miniGraphBySymbol[w.symbol]
     return (
         <div key={w.symbol} className="watchlist-card">
             <span className="symbol-font"> {w.symbol} </span>

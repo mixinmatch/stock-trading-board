@@ -9,7 +9,7 @@ const StockGraph = ({data1=data}) => {
 
     return (
         <LineChart width={900} height={300} data={data1} >
-            <Line type="linear" dataKey="price" stroke={upOrDown > 0 ? "#66ddb8" : "#eb5131"} dot={false} />
+            <Line type="linear" dataKey="price" strokeWidth={3}stroke={upOrDown > 0 ? "#66ddb8" : "#eb5131"} dot={false} />
             <XAxis dataKey="name" tick={false} />
             <YAxis dataKey="price" type="number" domain={[a[0], a[1]]} tick={false} />
 
