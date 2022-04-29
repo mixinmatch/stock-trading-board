@@ -11,7 +11,9 @@ const WatchList = ({ watches }) => {
                     <BsThreeDots size={25}/>
                 </button>
             </header>
-            <CardList array={watches} />
+            <div style={{paddingTop: '25px'}}>
+                <CardList array={watches} />
+            </div>
         </div>
     )
 }
