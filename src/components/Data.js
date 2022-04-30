@@ -316,7 +316,7 @@ const miniGraphMsft = [
 , {name:16,price:186.86}
 , {name:17,price:447.41}
 , {name:18,price:384.59}
-, {name:19,price:434.12}]
+, {name:19, price:434.12}]
 
 const miniGraphGoogl = [
   {name:0,price:3309.66}
@@ -508,9 +508,250 @@ export const miniGraphBySymbol = {
   'GOOGL': miniGraphGoogl,
   'AMZN': miniGraphAmzn,
   'TSLA': miniGraphTsla,
-  'NVDA': miniGraphTsla,
+  'NVDA': miniGraphNvda,
   'BRK.A': miniGraphBrka,
   'FB': miniGraphFB,
   'UNH': miniGraphUnh,
   'JNJ': miniGraphJnj
 }
+
+export const fiveYearDataAapl = [
+  {
+    symbol: 'AAPL',
+    name: '1',
+    price: 165.30,
+  },
+  {
+    symbol: 'AAPL',
+    name: '2',
+    price: 165.28,
+  },
+  {
+    symbol: 'AAPL',
+    name: '3',
+    price: 164.48,
+  },
+  {
+    symbol: 'AAPL',
+    name: '4',
+    price: 164.93,
+  },
+  {
+    symbol: 'AAPL',
+    name: '5',
+    price: 164.93,
+  },
+  {
+    symbol: 'AAPL',
+    name: '6',
+    price: 163.52,
+  },
+  {
+    symbol: 'AAPL',
+    name: '7',
+    price: 163.60,
+  },
+  {
+    symbol: 'AAPL',
+    name: '8',
+    price: 163.70,
+  },
+  {
+    symbol: 'AAPL',
+    name: '9',
+    price: 163.04,
+  },
+  {
+    symbol: 'AAPL',
+    name: '10',
+    price: 162.71,
+  },
+  {
+    symbol: 'AAPL',
+    name: '11',
+    price: 162.45,
+  },
+  {
+    symbol: 'AAPL',
+    name: '12',
+    price: 161.98,
+  },
+  {
+    symbol: 'AAPL',
+    name: '13',
+    price: 162.14,
+  },
+  {
+    symbol: 'AAPL',
+    name: '14',
+    price: 162.79,
+  },
+]
+
+export const fiverYearDataMeta = [
+  {
+    symbol: 'FB',
+    name: '1',
+    price: 206.22,
+  },
+  {
+    symbol: 'FB',
+    name: '2',
+    price: 186.57,
+  },
+  {
+    symbol: 'FB',
+    name: '3',
+    price: 185.70,
+  },
+  {
+    symbol: 'FB',
+    name: '4',
+    price: 185.23,
+  },
+  {
+    symbol: 'FB',
+
+    name: '5',
+    price: 182.60,
+  },
+  {
+    symbol: 'FB',
+
+    name: '6',
+    price: 183.68,
+  },
+  {
+    symbol: 'FB',
+
+    name: '7',
+    price: 182.77,
+  },
+  {
+    symbol: 'FB',
+
+    name: '8',
+    price: 182.77,
+  },
+  {
+    symbol: 'FB',
+
+    name: '9',
+    price: 183.49,
+  },
+  {
+    symbol: 'FB',
+
+    name: '10',
+    price: 183.46,
+  },
+  {
+    symbol: 'FB',
+
+    name: '11',
+    price: 183.68,
+  },
+  {
+    symbol: 'FB',
+
+    name: '12',
+    price: 184.66,
+  },
+  {
+    symbol: 'FB',
+
+    name: '13',
+    price: 189.99,
+  },
+  {
+    symbol: 'FB',
+
+    name: '14',
+    price: 207.95,
+  },
+  ]
+  export const fiveYearDataNvda = [
+    {
+      symbol: 'NVDA',
+  
+      name: '1',
+      price: 202.05,
+    },
+    {
+      symbol: 'NVDA',
+  
+      name: '2',
+      price: 200.46,
+    },
+    {
+      symbol: 'NVDA',
+  
+      name: '3',
+      price: 198.52,
+    },
+    {
+      symbol: 'NVDA',
+  
+      name: '4',
+      price: 199.59,
+    },
+    {
+      symbol: 'NVDA',
+  
+      name: '5',
+      price: 200.89,
+    },
+    {
+      symbol: 'NVDA',
+  
+      name: '6',
+      price: 197.82,
+    },
+    {
+      symbol: 'NVDA',
+  
+      name: '7',
+      price: 197.44,
+    },
+    {
+      symbol: 'NVDA',
+  
+      name: '8',
+      price: 196.60,
+    },
+    {
+      symbol: 'NVDA',
+  
+      name: '9',
+      price: 195.99,
+    },
+    {
+      symbol: 'NVDA',
+  
+      name: '10',
+      price: 195.33,
+    },
+    {
+      symbol: 'NVDA',
+  
+      name: '11',
+      price: 183.46,
+    },
+    {
+      symbol: 'NVDA',
+  
+      name: '12',
+      price: 195.75,
+    },
+    {
+      symbol: 'NVDA',
+      name: '13',
+      price: 194.67,
+    },
+    {
+      symbol: 'NVDA',
+  
+      name: '14',
+      price: 194.94,
+    },
+    ]

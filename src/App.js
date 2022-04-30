@@ -3,6 +3,7 @@ import SymbolDashBoard from './components/SymbolDashBoard'
 import HeaderBar from './components/HeaderBar'
 import Notifications from "./components/Notificationpage";
 import Account from "./components/Account";
+import { fiverYearDataMeta, fiveYearDataNvda, fiveYearDataAapl } from './components/Data';
 
 import {
   BrowserRouter as Router,
@@ -13,10 +14,11 @@ import {
 
 import ReactDOM from 'react-dom'
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {stockDataApple, stockDataMeta, stockDataNvidia} from './components/Data'
 
 function App() {
+  const [activeTab, setActiveTab] = useState("today")
   const [dataGraph, setDataGraph] = useState(stockDataApple.graphData)
   const [renderSearch, setRenderSearch] = useState(true)
   const [price, setPrice] = useState(stockDataApple.price)
@@ -44,11 +46,44 @@ function App() {
     setRenderSearch(false);
   }
 
+  useEffect(() => {
+    //pre-append additional graph data. According to to how long it is.
+    let symbol = dataGraph[0].symbol
+    let whichData = fiveYearDataAapl
+    if (symbol === 'NVDA') {
+      whichData = fiveYearDataNvda
+    } else if (symbol === 'FB') {
+      whichData = fiverYearDataMeta
+    }
+
+    setDataGraph(dataGraph.filter(point => {
+      return point.name.includes(":")
+    }))
+
+    if (activeTab === '1w') {
+      setDataGraph(whichData.slice(-2).concat(dataGraph))
+    } else if (activeTab === '1m') {
+      setDataGraph([...(whichData.slice(-3)), ...dataGraph])
+    } else if (activeTab === '3m') {
+      setDataGraph([...(whichData.slice(-4)), ...dataGraph])
+    } else if (activeTab === '1y') {
+      setDataGraph([...(whichData.slice(-8)), ...dataGraph])
+    } else if (activeTab === '5y') {
+      setDataGraph([...whichData, ...dataGraph])
+    }
+  },
+    [activeTab]
+  )
+
+  function timePeriodHandler(tab) {  
+    setActiveTab(tab)
+  }
+
   return (
     <>
     <HeaderBar handler={handl} renderSearch={renderSearch} setRenderSearch={setRenderSearch}/>
         <Routes>
-          <Route path="/dashboard" element={<SymbolDashBoard d={dataGraph} price={price} changeAmount={changeAmount}/>} />
+          <Route path="/dashboard" element={<SymbolDashBoard activeTab={activeTab} timePeriodHandler={timePeriodHandler} d={dataGraph} price={price} changeAmount={changeAmount}/>} />
           <Route path="/notifications" element={<Notifications />} />
           <Route path="/account" element={<Account />} />
         </Routes>
