@@ -7,6 +7,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --increase-color: #66ddb8;
 }
 
 code {
@@ -104,7 +106,7 @@ code {
   height: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-bottom: 12px solid #66ddb8;
+  border-bottom: 12px solid var(--increase-color);
   display: inline-block;
 }
 
@@ -210,15 +212,19 @@ button:enabled.watchList-header-dot-button:hover {
 }
 
 .tabactive::after {
-  background-color: #66ddb8;
+  background-color: #e20909;
   border-radius: 4px 4px 0 0;
   content: "";
   display: block;
-  margin-top: black10px;
+  margin-top: 10px;
   height: 4px;
+  transition: 0.5s;
 }
+
+
 .tabactive > a {
   color: #66ddb8;
+  transition: 0.5s;
 }
 
 .news-card {
@@ -340,9 +346,7 @@ input:checked + .round-toggle:after
 }
 
 .search-results {
-  position: fixed;
-  position: fixed;
-  left: 8%;
+  position: absolute;
   width: 17%;
   box-shadow: rgb(100 100 111 / 20%) 0px 10px 20px 0px;
   /* margin-left: auto;
