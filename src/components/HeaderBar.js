@@ -23,7 +23,7 @@ const HeaderBar = ({handler, renderSearch, setRenderSearch}) => {
             <div className="header-bar">
                 <div className="logo-and-search">
                 <img src={"img/logo2.svg"} style={{padding:'12px'}}/>
-                    <div>
+                    <div style={{  alignSelf:"center"}}>
                             <input className="header-bar-search" type="text" placeholder="Search a stock" onInput={onSearchChange} />
                             {
                                 renderSearch && text && <SearchResults query={text} handl={handler} />
