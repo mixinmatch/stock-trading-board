@@ -11,7 +11,7 @@ const SymbolDashBoard = ({d, price=stockDataApple.price, changeAmount=stockDataA
 
     return (
         <div className="dashboard-group">
-            <Ticker isAddedToWatchList={false} companyName='Apple inc' price={price} timePeriodHandler={timePeriodHandler} changeAmount={changeAmount} activeTab={activeTab} data={d}/>
+            <Ticker isAddedToWatchList={false} padding={{right:'20px'}} companyName='Apple inc' price={price} timePeriodHandler={timePeriodHandler} changeAmount={changeAmount} activeTab={activeTab} data={d}/>
             <WatchList watches={stocksWatches}/>
         </div>   
     )

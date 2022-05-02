@@ -8,10 +8,10 @@ const StockGraph = ({data1=data}) => {
   let upOrDown = data1.slice(-1)[0].price - a[2]
 
     return (
-        <LineChart width={900} height={300} data={data1} >
+        <LineChart width={900} height={300} margin={{ top: 0, right: 20, bottom: 0, left: 0 }}  data={data1} >
             <Line type="linear" dataKey="price" strokeWidth={3}stroke={upOrDown > 0 ? "#66ddb8" : "#eb5131"} dot={false} />
-            <XAxis dataKey="name" tick={false} />
-            <YAxis dataKey="price" type="number" domain={[a[0], a[1]]} tick={false} />
+            <XAxis dataKey="name" tick={false} hide={true} />
+            <YAxis dataKey="price" hide={true} margin={{ top: 0, right: 0, bottom: 0, left: 0 }} type="number" domain={[a[0], a[1]]} tick={false} />
 
             <ReferenceLine y={a[2]} stroke="gray" strokeDasharray="3 3" />
             <Tooltip />

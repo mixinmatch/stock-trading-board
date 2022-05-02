@@ -30,7 +30,7 @@ code {
   outline: none;
   align-self: center;
   border-color: #d3d3d366;
-  border-radius: 5px;
+  border-radius: 48px;
 
 
   -webkit-appearance: none; 
@@ -213,13 +213,12 @@ button:enabled.watchList-header-dot-button:hover {
 }
 
 .tabactive::after {
-  background-color: #e20909;
+  background-color: var(--increase-color);
   border-radius: 4px 4px 0 0;
   content: "";
   display: block;
   margin-top: 10px;
   height: 4px;
-  transition: 0.5s;
 }
 
 
