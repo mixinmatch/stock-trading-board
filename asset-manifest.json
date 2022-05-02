@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/stock-trading-board/static/css/main.7ef11c41.css",
+    "main.js": "/stock-trading-board/static/js/main.e0fc7025.js",
+    "static/js/787.03496bdb.chunk.js": "/stock-trading-board/static/js/787.03496bdb.chunk.js",
+    "index.html": "/stock-trading-board/index.html",
+    "main.7ef11c41.css.map": "/stock-trading-board/static/css/main.7ef11c41.css.map",
+    "main.e0fc7025.js.map": "/stock-trading-board/static/js/main.e0fc7025.js.map",
+    "787.03496bdb.chunk.js.map": "/stock-trading-board/static/js/787.03496bdb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7ef11c41.css",
+    "static/js/main.e0fc7025.js"
+  ]
+}
