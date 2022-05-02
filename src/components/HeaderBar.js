@@ -1,5 +1,6 @@
 import Button from "./Button"
 import React from "react";
+import { BsSearch } from 'react-icons/bs'
 import {
     BrowserRouter as Router,
     Link,
@@ -10,6 +11,7 @@ import {
 import { useState } from "react";
 import stockData from './Data'
 import SearchResult from "./SeachResult";
+
 const HeaderBar = ({handler, renderSearch, setRenderSearch}) => {
 
     const [text, setText] = useState("")
@@ -22,9 +24,14 @@ const HeaderBar = ({handler, renderSearch, setRenderSearch}) => {
         <div>
             <div className="header-bar">
                 <div className="logo-and-search">
-                <img src={"img/logo2.svg"} style={{padding:'12px'}}/>
+                {/* <img src={"img/logo2.svg"} style={{padding:'12px'}}/> */}
                     <div style={{  alignSelf:"center"}}>
+                        <div style={{borderStyle: 'solid', borderWidth: '1px', borderColor: '#d3d3d366', borderRadius: '5px'}}>
+                        <button style={{  border: 'none',
+  backgroundColor: 'transparent', padding:'15px'}}> <BsSearch /> </button>
                             <input className="header-bar-search" type="text" placeholder="Search a stock" onInput={onSearchChange} />
+                        </div>
+ 
                             {
                                 renderSearch && text && <SearchResults query={text} handl={handler} />
                             }
