@@ -230,7 +230,6 @@ button:enabled.watchList-header-dot-button:hover {
 
 li.tabactive {
   border-bottom: 5px solid var(--increase-color);
-  border-radius: 5px;
 }
 
 .news-card {
