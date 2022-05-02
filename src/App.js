@@ -9,7 +9,8 @@ import {
   BrowserRouter as Router,
   useLocation,
   Routes,
-  Route
+  Route,
+  Navigate
 } from "react-router-dom";
 
 import ReactDOM from 'react-dom'
@@ -83,9 +84,10 @@ function App() {
     <>
     <HeaderBar handler={handl} renderSearch={renderSearch} setRenderSearch={setRenderSearch}/>
         <Routes>
-          <Route path="/dashboard" element={<SymbolDashBoard activeTab={activeTab} timePeriodHandler={timePeriodHandler} d={dataGraph} price={price} changeAmount={changeAmount}/>} />
-          <Route path="/notifications" element={<Notifications />} />
-          <Route path="/account" element={<Account />} />
+          <Route exact path="/stock-trading-board/" element={<Navigate replace to="/stock-trading-board/dashboard" /> } />
+          <Route path="/stock-trading-board/dashboard" element={<SymbolDashBoard activeTab={activeTab} timePeriodHandler={timePeriodHandler} d={dataGraph} price={price} changeAmount={changeAmount}/>} />
+          <Route path="/stock-trading-board/notifications" element={<Notifications />} />
+          <Route path="/stock-trading-board/account" element={<Account />} />
         </Routes>
 
     </>

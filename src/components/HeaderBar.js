@@ -71,13 +71,13 @@ const RightMenu = () => {
     return (
          <div className="right-button-group">
                 <button className="right-menu-button">
-                    <Link to="/dashboard" style={textStyle}>Home</Link>
+                    <Link to="/stock-trading-board/dashboard" style={textStyle}>Home</Link>
                 </button>
                 <button className="right-menu-button">
-                    <Link to="notifications" style={textStyle} >Notifications</Link>
+                    <Link to="/stock-trading-board/notifications" style={textStyle} >Notifications</Link>
                 </button>
                 <button className="right-menu-button">
-                    <Link to="account" style={textStyle} >Account</Link>
+                    <Link to="/stock-trading-board/account" style={textStyle} >Account</Link>
                 </button>
          </div>
     )
