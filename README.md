@@ -1,2 +1,2 @@
-##Demo
-https://mixinmatch.github.io/dashboard
+## Demo
+https://mixinmatch.github.io/stock-trading-board/
