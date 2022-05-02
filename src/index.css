@@ -206,25 +206,31 @@ button:enabled.watchList-header-dot-button:hover {
   display: flex;
   justify-content: flex-start;
   margin-bottom: 25px;
+  border-bottom: 1px dotted rgba(233, 229, 229, 0.795);
 }
 
 .tab {
   padding: 10px;
 }
 
-.tabactive::after {
+/* .tabactive::after {
   background-color: var(--increase-color);
   border-radius: 4px 4px 0 0;
   content: "";
   display: block;
   margin-top: 10px;
   height: 4px;
-}
+} */
 
 
 .tabactive > a {
   color: #66ddb8;
   transition: 0.5s;
+}
+
+li.tabactive {
+  border-bottom: 5px solid var(--increase-color);
+  border-radius: 5px;
 }
 
 .news-card {
